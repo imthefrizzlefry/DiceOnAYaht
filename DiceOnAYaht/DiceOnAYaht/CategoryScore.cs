@@ -68,16 +68,17 @@ namespace DiceOnAYaht
                 }
                 #endregion
 
-
+                #region Straights
                 case scoreCategory.SmallStraight:
                 case scoreCategory.LargeStraight:
+                {
+                    if(arrayContainsSeries((int)categoryValue-8, diceScores)) // use enum to determine series of 4 or 5
                     {
-                        if(arrayContainsSeries((int)categoryValue-8, diceScores))
-                        {
-                            finalScore = categoryValue == scoreCategory.SmallStraight ? 30 : 40 ;
-                        }
-                        break;
+                        finalScore = categoryValue == scoreCategory.SmallStraight ? 30 : 40 ;
                     }
+                    break;
+                }
+                #endregion
 
                 #region All Different
                 case scoreCategory.AllDifferent:
@@ -98,7 +99,7 @@ namespace DiceOnAYaht
                 #region Chance
                 case scoreCategory.Chance: // simply sum up the values
                 {
-                        finalScore += sumValuesInArray(diceScores);
+                    finalScore += sumValuesInArray(diceScores);
                     break;
                 }
                 #endregion
