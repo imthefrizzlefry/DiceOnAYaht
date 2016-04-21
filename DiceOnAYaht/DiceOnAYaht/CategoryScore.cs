@@ -121,7 +121,7 @@ namespace DiceOnAYaht
             return finalScore;
         }
 
-        private static bool arrayContainsSeries(int seriesLength, int[] diceScores)
+        static bool arrayContainsSeries(int seriesLength, int[] diceScores)
         {
             Array.Sort(diceScores);            
             int arrayLength = diceScores.Length;
@@ -191,7 +191,7 @@ namespace DiceOnAYaht
             return sum;
         }
 
-        private static int findNextValue(int firstValue, int[] diceScores)
+        static int findNextValue(int firstValue, int[] diceScores)
         {
             foreach (int value in diceScores)
             {
